@@ -1,0 +1,10 @@
+.\tmp\c528c558-5db8-4ba8-84a2-ce1da86db989\Solution.java:5: 错误: 非法的类型开始
+null}
+^
+.\tmp\c528c558-5db8-4ba8-84a2-ce1da86db989\Solution.java:5: 错误: 需要';'
+null}
+    ^
+.\tmp\c528c558-5db8-4ba8-84a2-ce1da86db989\Solution.java:5: 错误: 解析时已到达文件结尾
+null}
+     ^
+3 个错误

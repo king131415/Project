@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.Mapper.DiscussPostMapper">
+    <sql id="selectFiles">
+         id,user_id,title,content
+         ,type,status,create_time,
+         comment_count,score
+    </sql>
+    <sql id="insertFiles">
+         user_id,title,content
+         ,type,status,create_time,
+         comment_count,score
+    </sql>
+<!-- resultType:标识返回类型，Java自带的类型可以不用   -->
+<!--    此处是动态SQL,当用户不是登录时，就显示首页所有的帖子，所以要用动态的SQL-->
+   <select id="selectDiscussPosts" resultType="DiscussPost">
+       select <include refid="selectFiles"></include>
+       from discuss_post
+       where status !=2
+       <if test="userId!=0">
+        and user_id=#{userId}
+       </if>
+       order by (type*1000+score+create_time)/now() desc
+       limit #{start}, #{limit}
+   </select>
+    
+    <select id="selectDiscussPostCout" resultType="int">
+        select count(id)
+        from discuss_post
+        where status !=2
+        <if test="userId!=0">
+            and user_id=#{userId}
+        </if>
+    </select>
+    
+    <insert id="insertDiscussPost" parameterType="DiscussPost" keyProperty="id">
+        insert into discuss_post(<include refid="insertFiles"></include>)
+        values (#{userId},#{title},#{content},#{type},#{status},#{createTime},#{commentCount},#{score})
+    </insert>
+    
+    <select id="selectDiscussPostById" resultType="DiscussPost">
+        select <include refid="selectFiles"></include>
+        from discuss_post
+        where id=#{id}
+
+    </select>
+
+    <update id="updateCommentCount">
+     update discuss_post set comment_count=#{commentCount} where id=#{id}
+
+    </update>
+
+
+
+    <update id="updateDiscusspostType" >
+     update discuss_post set type=#{type} where id=#{id}
+
+    </update>
+
+
+
+    <update id="updateDiscussStatus">
+     update discuss_post set status=#{status} where id=#{id}
+
+    </update>
+
+
+    <update id="updateDiscssPostScore">
+     update discuss_post set score=#{score} where id=#{id}
+
+    </update>
+
+            
+
+</mapper>

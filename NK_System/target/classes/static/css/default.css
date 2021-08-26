@@ -1,0 +1,134 @@
+/*.my{*/
+/*   width: 200px;*/
+/*   height: 62px;*/
+/*   background:url("../img/MMM.png.png");*/
+/*   float: left;*/
+/*}*/
+/**
+标题加东西
+ */
+
+/*.myTitle{*/
+/*   background:url("../OJ.png.png");*/
+/*}*/
+.xiao{
+   clear: both;
+}
+.MyProble{
+   width: auto!important;
+   height: auto!important;
+}
+.idproblem{
+   background-color: #c7d7dc !important;
+}
+.mypre{
+   font-size: 14px;
+   position: relative;
+   height: 1130px;
+   display: block;
+   color: #fcfdfd;
+   padding: 10px 0 10px 10px;
+   padding-top: 10px;
+   padding-right: 0px;
+   padding-bottom: 10px;
+   padding-left: 10px;
+   margin: .8em 0;
+   margin-top: 0.8em;
+   margin-right: 0px;
+   margin-bottom: 0.8em;
+   margin-left: 0px;
+   background: #566e7e;
+   word-break: break-word;
+   overflow: auto;
+   overflow-x: auto;
+   overflow-y: auto;
+}
+.mm-div{
+   background-color: #36454f;
+
+   width: auto!important;
+   height:auto!important;
+}
+.footermy{
+   float: bottom;
+}
+.html{
+   /*background: #566e7e;*/
+   background: #36454f;
+}
+.My-col-sm-12{
+   /*width: 600px!important;*/
+   width: 55%;
+   /*height: 200px;*/
+   float: left;
+}
+.my_code{
+   width: 45%;
+   height: 1200px!important;
+   margin-top: 28px;
+   float: left;
+
+}
+.table-list{
+   width: 1100px!important;
+   height: 1000px!important;
+   margin-left: auto!important;
+   margin-right: auto!important;
+   margin-top: 130px!important;
+}
+
+.detail—list{
+   /*width:1200px!important;*/
+   /*height: 1300px!important;*/
+   margin-left: 50px;
+   margin-right: 50px;
+}
+/*实现了响应式布局*/
+@media screen and (max-width: 1100px) {
+  .my_code{
+     width: 100%;
+  }
+   .My-col-sm-12{
+      width: 100%;
+   }
+   .table-list{
+      width: 100%;
+   }
+
+}
+.Mycomponents{
+   width: auto!important;
+   height:auto!important;
+   margin-right: auto;
+   margin-left: auto;
+}
+.btn-success{
+   background-color: #0eee42 !important;
+   display: block;
+   width: 54px!important;
+   height: 28px!important;
+   font-style: normal;
+   margin-top: 10px;
+   margin-left: 556px;
+}
+.footermy{
+   background: #6a6a6a;
+   width: auto!important;
+   height: 120px!important;
+}
+
+
+.banquan{
+   /*这里必须要使用绝对定位了*/
+   position:absolute!important;
+   margin-left: 600px;
+   margin-top: 50px;
+}
+.my_td{
+   background-color: #75c3cd;
+   transition:background-color 200ms linear;
+
+}
+.my_td:hover{
+   background-color: #8f31d0;
+}
